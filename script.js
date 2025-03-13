@@ -4,8 +4,8 @@
  */
 
 /* Global Variables */
-
-
+var trainer = false;
+var count = 0;
 /** 
  * main  
  * Handles new Nim games with gametype choice simple or trainer and a play again option. 
@@ -14,7 +14,11 @@
  */
 /* Main */
 function main(){
-
+    if (again == false) {
+        trainer = true("Trainer?");
+        playNim();
+        let again = true("Play again?");
+    }
 }
 
 /** 
