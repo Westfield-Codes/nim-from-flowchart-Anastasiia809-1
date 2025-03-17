@@ -14,11 +14,12 @@ var count = 0;
  */
 /* Main */
 function main(){
-    if (again == false) {
-        trainer = true("Trainer?");
-        playNim();
-        let again = true("Play again?");
-    }
+   let again = true;
+   while (again == true) {
+    trainer = confirm("Trainer mode?");
+    playNim();
+    again = confirm("Again?");
+   }
 }
 
 /** 
@@ -28,7 +29,19 @@ function main(){
  * @return none
  */
 function playNim(){
-
+    count = 0;
+    while (count < 21) {
+        userTurn();
+        if (count > 20) {
+            alert("You lose!");
+        }
+        else {
+            cpuTurn();
+            if (count > 20) {
+                alert("You win!");
+            }
+        } 
+    }
 }
 
 /** 
@@ -38,7 +51,7 @@ function playNim(){
  * @return none
  */
 function userTurn(){
-
+    
 }
 
 /** 
