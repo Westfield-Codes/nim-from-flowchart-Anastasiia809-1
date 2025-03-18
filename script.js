@@ -51,7 +51,16 @@ function playNim(){
  * @return none
  */
 function userTurn(){
-    
+    let turn = prompt("Input a number witin a range 1-3");
+    turn = parseInt(turn);
+    if (turn > 3 || turn < 1) {
+        alert("Your input is invalid!");
+        userTurn();
+    }
+    else {
+        count += turn;
+        alert("Count is now " + count);
+    }
 }
 
 /** 
@@ -61,5 +70,12 @@ function userTurn(){
  * @return none
  */
 function cpuTurn(){
-
+    let turn = 0;
+    if (count == 17) turn = 3;
+    else if (count == 18) turn = 2;
+    else if (count > 18) turn = 1;
+    else if (trainer == true) turn = 4 -count % 4;
+    else turn = Math.floor(Math.random()*3+1);
+    count += turn;
+    alert("I counted " + turn + " Count is now " + count);
 }
